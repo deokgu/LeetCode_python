@@ -51,6 +51,16 @@ if __name__ == "__main__":
             nums_map[num] = i
 
     5. 투 포인터 이용
+        left, rgith = 0, len(nums) -1
+        while not left == right:
+        if nums[left] + nums[right] < target:
+            left += 1 
+        elif nums[elft] + nums[right] > target:
+            right -= 1
+        else:
+        return left, right 
+        
+        
         
 
 """
