@@ -4,7 +4,7 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 A subarray is a contiguous part of an array.
 """
 class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
+    def maxSubArray(self, nums: list[int]) -> int:
         for x in range(1, len(nums)):
             nums[x] += nums[x-1] if nums[x-1] > 0 else 0
         return max(nums)

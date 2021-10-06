@@ -2,7 +2,9 @@
 x = 4 
 
 # _list = list(map(int, input().split()))
-_list = [1,3,1,5]
+_list = [1,3,1,5] 
+
+# leetcode 198
 
 d = [_list[0], max(_list[0], _list[1])]
 
