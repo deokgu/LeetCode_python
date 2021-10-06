@@ -13,6 +13,13 @@ for i in range(2, len(_list)):
     d.append(max(d[1], d[0] +_list[i]))
     d.pop(0)
 
+    # list d 를 안쓴다면 # see answer
+# a = _list[0]
+# b = max(_list[0], _list[1])
+#    for 
+#   a, b = b, max(b, a+_list[i])
+#reutrn b
+
 print(d[1])
 
 
