@@ -17,6 +17,7 @@ def check_pass(board, bx, by, fx = None, fy = None):
         return True
     else:
         return False
+
 def solution(board):
     n = len(board)
     board_true = deepcopy(board)
