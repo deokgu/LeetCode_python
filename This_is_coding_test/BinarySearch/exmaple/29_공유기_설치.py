@@ -1,41 +1,44 @@
 ## https://www.acmicpc.net/problem/2110
+# 파라메트릭 서치
+n, c = map(int, input().split())
 
-# n, c = map(int, input().split())
+nodes = []
+for x in range(n):
+    nodes.append(int(input()))   
 
-# nodes = []
-# for x in range(n):
-#     nodes.append(int(input()))   
-
-n, c ,nodes = 5, 3, [1, 2, 8, 4, 9] # 3
+# n, c ,nodes = 5, 3, [1, 2, 8, 4, 9] # 3
 
 nodes.sort()
 
-start = nodes[1] - nodes[0]
+start = 1
 end = nodes[-1] - nodes[0]
 
-while start <= end:
-    mid_gap = start + (end-start)//2
+_max = 0
+while end >= start:
+    gap = (start+end)//2
 
-    _count = 0
-    for x in range(len(nodes)):
-        if nodes[x] >= mid_gap + nodes[0]:
+    # print(f"end {end}, start {start}")
+    _count = 1
+    node = nodes[0]
+    for x in range(1, n):
+        if nodes[x] >= gap + node:
+            # print(f"{nodes[x]} > = {gap+node} {gap}  {node}")
+            node= nodes[x]
             _count += 1
 
-    print(_count)
-    print(mid_gap)
-    if _count <= c:
-        _max = mid_gap
-
-    if mid_gap < _max:
-        end = mid_gap -1
-    elif mid_gap > _max :
-        start = mid_gap +1
-        
-    values = nodes[0]
-    print(f"end {end}, start {start}")
-    print(values)
-    break
-print(mid_gap)
+    # if _count >= c:
+    #     if gap >= _max:
+    #         _max = gap
+    # print(f"_count {_count}, c {c}, _max {_max}, gap {gap}")
+    
+    if _count >= c:
+        start = gap +1
+        _max = gap
+    else:
+        end = gap -1
+    # import time
+    # time.sleep(0.5)
+print(_max)
 
 # node_gap = []
 # for x in range(0, len(nodes)-1):
