@@ -25,14 +25,15 @@ total = [0 for _ in range(n+1)]
 
 sc_time, money = sc.pop()
 for i in range(n-1,-1,-1):
-    print(i)
+    # print(i)
     if i + sc_time > n:
         total[i] = total[i+1]
     else:
-        print(f"sc_time {sc_time} total[i] {total[i]} money {money}  {total}")
+        # print(f"sc_time {sc_time} total[i] {total[i]} money {money}  {total}")
+        # print(f"sc_time {sc_time} money {money}")
         total[i] = max(money + total[i + sc_time], total[i+1])
         sc_time, money = sc.pop()
-print(total)
+print(max(total))
 
 for i, (sc_time, money) in enumerate(sc):
     if i + sc_time <= n:
