@@ -16,28 +16,17 @@ end = nodes[-1] - nodes[0]
 _max = 0
 while end >= start:
     gap = (start+end)//2
-
-    # print(f"end {end}, start {start}")
     _count = 1
     node = nodes[0]
     for x in range(1, n):
         if nodes[x] >= gap + node:
-            # print(f"{nodes[x]} > = {gap+node} {gap}  {node}")
             node= nodes[x]
             _count += 1
-
-    # if _count >= c:
-    #     if gap >= _max:
-    #         _max = gap
-    # print(f"_count {_count}, c {c}, _max {_max}, gap {gap}")
-    
     if _count >= c:
         start = gap +1
         _max = gap
     else:
         end = gap -1
-    # import time
-    # time.sleep(0.5)
 print(_max)
 
 # node_gap = []
