@@ -1,9 +1,10 @@
 import heapq
 from collections import deque
-n = int(input())
+n, m = map(int, input().split())
 
-nodes = [[] for _ in range(n)]
-for _ in range(n):
+nodes = [[] for _ in range(n+1)]
+
+for _ in range(m):
     x, y = map(int, input().split())
     nodes[x].append(y)
     nodes[y].append(x)
@@ -13,7 +14,6 @@ INF = int(1e9)
 distance = [INF] * (n+1)
 
 temp = deque()
-
 for node in nodes[1]:
     temp.append(node)
 
@@ -42,7 +42,6 @@ print(distance)
 
 
 """
-8
 6 7
 3 6
 4 3

@@ -28,9 +28,31 @@ for _ in range(T):
                 if distance[x][y] + nodes[nx][ny] < distance[nx][ny]:
                     distance[nx][ny] = distance[x][y] + nodes[nx][ny]
                     temp.append((nx, ny)) 
-                # if 0 <= nx < n and 0 <= ny < y:
     bfs(0,0)
     print(distance[n-1][n-1])
+
+# book _ answer
+import heapq
+import sys
+input = sys.stdin.readline
+INF = int(1e9)
+
+move = [(-1,0), (0,1), (1,0), (0,-1)]
+
+for tx in range(int(input())):
+    n = int(input())
+
+    graph = []
+    for i in range(n):
+        graph.append(list(map(int, input().split())))
+    
+    distance = [ [INF] * n for _ in range(n)]
+
+    x, y = 0, 0
+    q = [(graph[x][y], x, y)]
+    distance[x][y] = graph[x][y]
+    
+
 
 """
 3
